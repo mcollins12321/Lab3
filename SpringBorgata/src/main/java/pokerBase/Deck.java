@@ -36,7 +36,13 @@ public class Deck {
 
 	}
 	
-
+	public Deck(int numJokers) { 
+		this(); 
+		for(short i = 0; i < numJokers; i++) {
+			cards.add(new Card(eSuit.JOKER, eRank.JOKER, true)); 
+		}
+		ShuffleCards(); 
+	}
 	
 	private void ShuffleCards()
 	{
