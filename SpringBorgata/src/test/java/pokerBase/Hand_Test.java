@@ -43,7 +43,7 @@ public class Hand_Test {
 		h.AddCardToHand(new Card(eSuit.CLUBS,eRank.TEN,0));
 		h.AddCardToHand(new Card(eSuit.CLUBS,eRank.TEN,0));
 		h.AddCardToHand(new Card(eSuit.CLUBS,eRank.TEN,0));
-		h.EvalHand();
+		h = Hand.EvalHands(h);
 		
 		assertTrue(h.getHandStrength() == eHandStrength.FiveOfAKind.getHandStrength());
 		
@@ -58,7 +58,7 @@ public class Hand_Test {
 		h.AddCardToHand(new Card(eSuit.CLUBS,eRank.QUEEN,0));
 		h.AddCardToHand(new Card(eSuit.CLUBS,eRank.KING,0));
 		h.AddCardToHand(new Card(eSuit.CLUBS,eRank.ACE,0));
-		h.EvalHand();
+		h = Hand.EvalHands(h);;
 		
 		assertTrue(h.getHandStrength() == eHandStrength.RoyalFlush.getHandStrength());
 		
@@ -72,7 +72,7 @@ public class Hand_Test {
 		h.AddCardToHand(new Card(eSuit.CLUBS,eRank.QUEEN,0));
 		h.AddCardToHand(new Card(eSuit.CLUBS,eRank.KING,0));
 		h.AddCardToHand(new Card(eSuit.CLUBS,eRank.NINE,0));
-		h.EvalHand();
+		h = Hand.EvalHands(h);;
 		
 		assertTrue(h.getHandStrength() == eHandStrength.StraightFlush.getHandStrength());
 		assertTrue(h.getHighPairStrength() == eRank.KING.getRank());
@@ -91,7 +91,7 @@ public class Hand_Test {
 		h.AddCardToHand(new Card(eSuit.CLUBS,eRank.QUEEN,0));
 		h.AddCardToHand(new Card(eSuit.CLUBS,eRank.KING,0));
 		h.AddCardToHand(new Card(eSuit.CLUBS,eRank.TWO,0));
-		h.EvalHand();
+		h = Hand.EvalHands(h);;
 		
 		assertTrue(h.getHandStrength() == eHandStrength.Flush.getHandStrength());
 		assertTrue(h.getHighPairStrength() == eRank.KING.getRank());
@@ -107,7 +107,7 @@ public class Hand_Test {
 		h.AddCardToHand(new Card(eSuit.CLUBS,eRank.QUEEN,0));
 		h.AddCardToHand(new Card(eSuit.CLUBS,eRank.KING,0));
 		h.AddCardToHand(new Card(eSuit.CLUBS,eRank.NINE,0));
-		h.EvalHand();
+		h = Hand.EvalHands(h);;
 		
 		assertTrue(h.getHandStrength() == eHandStrength.Straight.getHandStrength());
 		assertTrue(h.getHighPairStrength() == eRank.KING.getRank());
@@ -123,7 +123,7 @@ public class Hand_Test {
 		h.AddCardToHand(new Card(eSuit.SPADES,eRank.TEN,0));
 		h.AddCardToHand(new Card(eSuit.HEARTS,eRank.TEN,0));
 		h.AddCardToHand(new Card(eSuit.CLUBS,eRank.NINE,0));
-		h.EvalHand();
+		h = Hand.EvalHands(h);;
 		
 		assertTrue(h.getHandStrength() == eHandStrength.FourOfAKind.getHandStrength());
 		assertTrue(h.getHighPairStrength() == eRank.TEN.getRank());
@@ -146,7 +146,7 @@ public class Hand_Test {
 		h.AddCardToHand(new Card(eSuit.SPADES,eRank.TEN,0));
 		h.AddCardToHand(new Card(eSuit.HEARTS,eRank.TEN,0));
 		h.AddCardToHand(new Card(eSuit.CLUBS,eRank.KING,0));
-		h.EvalHand();
+		h = Hand.EvalHands(h);;
 		
 		assertTrue(h.getHandStrength() == eHandStrength.FourOfAKind.getHandStrength());
 		assertTrue(h.getHighPairStrength() == eRank.TEN.getRank());
@@ -163,7 +163,7 @@ public class Hand_Test {
 		h.AddCardToHand(new Card(eSuit.SPADES,eRank.TEN,0));
 		h.AddCardToHand(new Card(eSuit.HEARTS,eRank.FOUR,0));
 		h.AddCardToHand(new Card(eSuit.CLUBS,eRank.NINE,0));
-		h.EvalHand();
+		h = Hand.EvalHands(h);;
 		
 		assertTrue(h.getHandStrength() == eHandStrength.ThreeOfAKind.getHandStrength());
 		assertTrue(h.getHighPairStrength() == eRank.TEN.getRank());
@@ -179,7 +179,7 @@ public class Hand_Test {
 		h.AddCardToHand(new Card(eSuit.SPADES,eRank.TEN,0));
 		h.AddCardToHand(new Card(eSuit.HEARTS,eRank.KING,0));
 		h.AddCardToHand(new Card(eSuit.CLUBS,eRank.NINE,0));
-		h.EvalHand();
+		h = Hand.EvalHands(h);;
 		
 		assertTrue(h.getHandStrength() == eHandStrength.ThreeOfAKind.getHandStrength());
 		assertTrue(h.getHighPairStrength() == eRank.TEN.getRank());
@@ -204,7 +204,7 @@ public class Hand_Test {
 		h.AddCardToHand(new Card(eSuit.SPADES,eRank.TEN,0));
 		h.AddCardToHand(new Card(eSuit.HEARTS,eRank.TWO,0));
 		h.AddCardToHand(new Card(eSuit.CLUBS,eRank.THREE,0));
-		h.EvalHand();
+		h = Hand.EvalHands(h);;
 		
 		assertTrue(h.getHandStrength() == eHandStrength.ThreeOfAKind.getHandStrength());
 		assertTrue(h.getHighPairStrength() == eRank.TEN.getRank());
@@ -229,7 +229,7 @@ public class Hand_Test {
 		h.AddCardToHand(new Card(eSuit.SPADES,eRank.TEN,0));
 		h.AddCardToHand(new Card(eSuit.HEARTS,eRank.TWO,0));
 		h.AddCardToHand(new Card(eSuit.CLUBS,eRank.TWO,0));
-		h.EvalHand();
+		h = Hand.EvalHands(h);;
 		
 		assertTrue(h.getHandStrength() == eHandStrength.FullHouse.getHandStrength());
 		assertTrue(h.getHighPairStrength() == eRank.TEN.getRank());
@@ -245,7 +245,7 @@ public class Hand_Test {
 		h.AddCardToHand(new Card(eSuit.SPADES,eRank.TWO,0));
 		h.AddCardToHand(new Card(eSuit.HEARTS,eRank.TWO,0));
 		h.AddCardToHand(new Card(eSuit.CLUBS,eRank.TWO,0));
-		h.EvalHand();
+		h = Hand.EvalHands(h);;
 		
 		assertTrue(h.getHandStrength() == eHandStrength.FullHouse.getHandStrength());
 		assertTrue(h.getHighPairStrength() == eRank.TWO.getRank());
@@ -262,7 +262,7 @@ public class Hand_Test {
 		h.AddCardToHand(new Card(eSuit.SPADES,eRank.TWO,0));
 		h.AddCardToHand(new Card(eSuit.HEARTS,eRank.TWO,0));
 		h.AddCardToHand(new Card(eSuit.CLUBS,eRank.ACE,0));
-		h.EvalHand();
+		h = Hand.EvalHands(h);;
 		
 		assertTrue(h.getHandStrength() == eHandStrength.TwoPair.getHandStrength());
 		assertTrue(h.getHighPairStrength() == eRank.TEN.getRank());
@@ -283,7 +283,7 @@ public class Hand_Test {
 		h.AddCardToHand(new Card(eSuit.SPADES,eRank.THREE,0));
 		h.AddCardToHand(new Card(eSuit.HEARTS,eRank.TWO,0));
 		h.AddCardToHand(new Card(eSuit.CLUBS,eRank.ACE,0));
-		h.EvalHand();
+		h = Hand.EvalHands(h);;
 		
 		assertTrue(h.getHandStrength() == eHandStrength.Pair.getHandStrength());
 		assertTrue(h.getHighPairStrength() == eRank.TEN.getRank());
@@ -314,7 +314,7 @@ public class Hand_Test {
 		h.AddCardToHand(new Card(eSuit.SPADES,eRank.THREE,0));
 		h.AddCardToHand(new Card(eSuit.HEARTS,eRank.TWO,0));
 		h.AddCardToHand(new Card(eSuit.CLUBS,eRank.ACE,0));
-		h.EvalHand();
+		h = Hand.EvalHands(h);;
 		
 		assertTrue(h.getHandStrength() == eHandStrength.HighCard.getHandStrength());
 		assertTrue(h.getHighPairStrength() == eRank.ACE.getRank());
@@ -350,7 +350,9 @@ public class Hand_Test {
 		h1.AddCardToHand(new Card(eSuit.SPADES,eRank.TEN,0));
 		h1.AddCardToHand(new Card(eSuit.HEARTS,eRank.TWO,0));
 		h1.AddCardToHand(new Card(eSuit.CLUBS,eRank.ACE,0));
-		h1.EvalHand();
+		
+		h1 = Hand.EvalHands(h1);
+		
 		
 		Hand h2 = new Hand();
 		h2.AddCardToHand(new Card(eSuit.CLUBS,eRank.NINE,0));
@@ -358,7 +360,9 @@ public class Hand_Test {
 		h2.AddCardToHand(new Card(eSuit.SPADES,eRank.NINE,0));
 		h2.AddCardToHand(new Card(eSuit.HEARTS,eRank.NINE,0));
 		h2.AddCardToHand(new Card(eSuit.CLUBS,eRank.ACE,0));
-		h2.EvalHand();	
+		
+		h2 = Hand.EvalHands(h2);
+		
 		
 		ArrayList<Hand> TwoHands = new ArrayList<Hand>();
 		TwoHands.add(h1);
@@ -375,17 +379,3 @@ public class Hand_Test {
 		
 	}	
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-

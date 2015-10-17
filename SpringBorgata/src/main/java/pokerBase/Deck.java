@@ -38,10 +38,21 @@ public class Deck {
 	
 	public Deck(int numJokers) { 
 		this(); 
-		for(short i = 0; i < numJokers; i++) {
-			cards.add(new Card(eSuit.JOKER, eRank.JOKER, true)); 
+		for(int i = 0; i < numJokers; i++) {
+			cards.add(new Card(eSuit.JOKER, eRank.JOKER, 0)); 
 		}
 		ShuffleCards(); 
+	}
+	
+	public Deck(int numJokers, ArrayList<Card> Wilds) {
+		this(numJokers);
+		for( Card dCard : cards) {
+			for (Card wCard : Wilds) {
+				if (dCard.getSuit() == wCard.getSuit() && dCard.getRank() == wCard.getRank()) {
+					dCard.setWild();
+				}
+			}
+		}
 	}
 	
 	private void ShuffleCards()
