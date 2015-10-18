@@ -10,6 +10,7 @@ import javax.xml.bind.annotation.XmlElement;
 import pokerEnums.eCardNo;
 import pokerEnums.eHandStrength;
 import pokerEnums.eRank;
+import pokerBase.HandException;
 
 public class Hand {
 	private UUID playerID;
@@ -172,10 +173,17 @@ public class Hand {
 		}
 
 		Collections.sort(EvalHands, Hand.HandRank);
-
-		return EvalHands.get(0);
-
+		
+		if(EvalHands.get(0)==EvalHands.get(1)) {
+			System.out.print("Tie between two exploded hands");
+		}
+		else {
+			return EvalHands.get(0);
+		}
 	}
+	
+	
+	
 
 	private void EvalHand() {
 
