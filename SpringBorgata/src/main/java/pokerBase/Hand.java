@@ -238,7 +238,15 @@ public class Hand {
 		}
 
 		// Evaluates the hand type
+		
+		//Natural Royal Flush
 		if (Straight == true && Flush == true && CardsInHand.get(eCardNo.FifthCard.getCardNo()).getRank() == eRank.TEN
+				&& Ace && bNatural == 0) {
+			ScoreHand(eHandStrength.NaturalRoyalFlush, 0, 0, null);
+		}
+		
+		//Royal Flush	
+		else if (Straight == true && Flush == true && CardsInHand.get(eCardNo.FifthCard.getCardNo()).getRank() == eRank.TEN
 				&& Ace) {
 			ScoreHand(eHandStrength.RoyalFlush, 0, 0, null);
 		}

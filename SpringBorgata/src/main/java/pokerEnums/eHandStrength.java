@@ -8,6 +8,12 @@ public enum eHandStrength {
 			return "Five of a Kind";
 		}
 	},
+	NaturalRoyalFlush(105){
+		public String toString()
+		{
+			return "Natural Royal Flush";
+		}
+	},
 	RoyalFlush(100){
 		public String toString()
 		{
