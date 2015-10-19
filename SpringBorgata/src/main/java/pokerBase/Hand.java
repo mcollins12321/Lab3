@@ -256,13 +256,13 @@ public class Hand {
 		
 		//Natural Royal Flush
 		if (Straight == true && Flush == true && CardsInHand.get(eCardNo.FifthCard.getCardNo()).getRank() == eRank.TEN
-				&& Ace && bNatural != 0) {
+				&& Ace && bNatural == 1) {
 			ScoreHand(eHandStrength.NaturalRoyalFlush, 0, 0, null);
 		}
 		
 		//Royal Flush	
 		else if (Straight == true && Flush == true && CardsInHand.get(eCardNo.FifthCard.getCardNo()).getRank() == eRank.TEN
-				&& Ace) {
+				&& Ace && bNatural == 0) {
 			ScoreHand(eHandStrength.RoyalFlush, 0, 0, null);
 		}
 
