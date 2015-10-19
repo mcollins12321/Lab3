@@ -174,8 +174,15 @@ public class Hand {
 
 		Collections.sort(EvalHands, Hand.HandRank);
 		
-		if(EvalHands.get(0)==EvalHands.get(1)) {
-			System.out.print("Tie between two exploded hands");
+		if(EvalHands.size() > 1) {
+			if(EvalHands.get(0)==EvalHands.get(1)) {
+				System.out.print("Tie between two exploded hands");
+				return null;
+			}
+			else {
+				return EvalHands.get(0);
+			}
+		
 		}
 		else {
 			return EvalHands.get(0);
@@ -249,7 +256,7 @@ public class Hand {
 		
 		//Natural Royal Flush
 		if (Straight == true && Flush == true && CardsInHand.get(eCardNo.FifthCard.getCardNo()).getRank() == eRank.TEN
-				&& Ace && bNatural == 0) {
+				&& Ace && bNatural != 0) {
 			ScoreHand(eHandStrength.NaturalRoyalFlush, 0, 0, null);
 		}
 		

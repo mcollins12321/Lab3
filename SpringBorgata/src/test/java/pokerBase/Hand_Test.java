@@ -50,7 +50,7 @@ public class Hand_Test {
 	}
 
 	@Test
-	public void RoyalFlush() {
+	public void NaturalRoyalFlush() {
 		Deck d = new Deck();
 		Hand h = new Hand();
 		h.AddCardToHand(new Card(eSuit.CLUBS,eRank.TEN,0));
@@ -58,9 +58,9 @@ public class Hand_Test {
 		h.AddCardToHand(new Card(eSuit.CLUBS,eRank.QUEEN,0));
 		h.AddCardToHand(new Card(eSuit.CLUBS,eRank.KING,0));
 		h.AddCardToHand(new Card(eSuit.CLUBS,eRank.ACE,0));
-		h = Hand.EvalHands(h);;
+		h = Hand.EvalHands(h);
 		
-		assertTrue(h.getHandStrength() == eHandStrength.RoyalFlush.getHandStrength());
+		assertTrue(h.getHandStrength() == eHandStrength.NaturalRoyalFlush.getHandStrength());
 		
 	}
 	@Test
@@ -72,7 +72,8 @@ public class Hand_Test {
 		h.AddCardToHand(new Card(eSuit.CLUBS,eRank.QUEEN,0));
 		h.AddCardToHand(new Card(eSuit.CLUBS,eRank.KING,0));
 		h.AddCardToHand(new Card(eSuit.CLUBS,eRank.NINE,0));
-		h = Hand.EvalHands(h);;
+		h = Hand.EvalHands(h);
+		System.out.println(Hand.EvalHands(h));
 		
 		assertTrue(h.getHandStrength() == eHandStrength.StraightFlush.getHandStrength());
 		assertTrue(h.getHighPairStrength() == eRank.KING.getRank());
@@ -91,7 +92,7 @@ public class Hand_Test {
 		h.AddCardToHand(new Card(eSuit.CLUBS,eRank.QUEEN,0));
 		h.AddCardToHand(new Card(eSuit.CLUBS,eRank.KING,0));
 		h.AddCardToHand(new Card(eSuit.CLUBS,eRank.TWO,0));
-		h = Hand.EvalHands(h);;
+		h = Hand.EvalHands(h);
 		
 		assertTrue(h.getHandStrength() == eHandStrength.Flush.getHandStrength());
 		assertTrue(h.getHighPairStrength() == eRank.KING.getRank());
